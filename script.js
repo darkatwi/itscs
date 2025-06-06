@@ -26,7 +26,7 @@ btnBudget.addEventListener("click", function (e) {
     const value = parseFloat(budgetInput.value);
     if (value > 0) {
         budget = value;
-        budgetCard.textContent = "$" + budget.toFixed(2);
+        budgetCard.textContent =  budget.toFixed(2);
         updateBalance();
         errorMessage.classList.remove("error");
         budgetInput.value = "";
@@ -51,7 +51,7 @@ btnExpenses.addEventListener("click", function (e) {
         };
         expenses.push(expense);
         totalExpenses += amount;
-        expensesCard.textContent = "$" + totalExpenses.toFixed(2);
+        expensesCard.textContent =  totalExpenses.toFixed(2);
         updateBalance();
         renderExpenses();
         errorMessage.classList.remove("error");
@@ -68,7 +68,7 @@ btnExpenses.addEventListener("click", function (e) {
 
 function updateBalance() {
     const balance = budget - totalExpenses;
-    balanceCard.textContent = "$" + balance.toFixed(2);
+    balanceCard.textContent =  balance.toFixed(2);
 }
 
 function renderExpenses() {
