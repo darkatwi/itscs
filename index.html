@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <script defer src="script.js"></script>
+  <title>Expense Tracker</title>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h2>Budget App</h2>
+      <button id="darkModeToggle" aria-label="Toggle Dark Mode"><i class="bx bx-moon"></i></button>
+    </header>
+
+    <div class="error_message">
+      <p>Please Enter Budget Amount | More Than 0</p>
+    </div>
+
+    <div class="budget_content">
+      <div class="ur_budget">
+        <form id="budgetForm">
+          <label for="budget">Your Budget</label>
+          <input type="number" placeholder="Enter Your Budget" class="budget_input" />
+          <button class="btn" id="btn_budget">Calculate</button>
+        </form>
+      </div>
+
+      <div class="ur_expenses">
+        <form id="expensesForm">
+          <label for="expenses">Expenses Details</label>
+          <input type="text" placeholder="Enter Expenses Desc!" class="Expenses_input" />
+          <input type="number" placeholder="Enter Amount" class="Expenses_amount" />
+          <input type="text" placeholder="Enter Category" class="Expenses_category" />
+          <button class="btn" id="btn_Expenses">Add Expenses</button>
+        </form>
+      </div>
+    </div>
+
+    <ul class="cards">
+      <li>
+        <i class="bx bx-money"></i>
+        <span class="info">
+          <h3><span>$</span><span class="budget_card">0.00</span></h3>
+          <p>Budget</p>
+        </span>
+      </li>
+      <li>
+        <i class="bx bx-credit-card"></i>
+        <span class="info">
+          <h3><span>$</span><span class="expenses_card">0.00</span></h3>
+          <p>Expenses</p>
+        </span>
+      </li>
+      <li>
+        <i class="bx bx-dollar"></i>
+        <span class="info">
+          <h3><span>$</span><span class="balance_card">0.00</span></h3>
+          <p>Balance</p>
+        </span>
+      </li>
+    </ul>
+
+    <div class="table_content">
+      <div class="table_header" style="display: flex; align-items: center; justify-content: space-between;">
+        <h3>Budget Details</h3>
+        <div>
+          <button id="generateReportBtn" class="action-btn">Generate Report</button>
+          <button id="viewHistoryBtn" class="action-btn green-btn">View History</button>
+        </div>
+      </div>
+      <div class="table_data"></div>
+    </div>
+
+    <div id="historyContainer">
+      <h3>Saved Budget Reports History</h3>
+      <div id="historyContent"></div>
+      <button id="closeHistoryBtn">Close History</button>
+    </div>
+
+  </div>
+</body>
+
+</html>
